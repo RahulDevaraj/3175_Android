@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lec1Demo</string>
+    <string name="txtTitle">Value 1</string>
+    <string name="var2">Hai</string>
+    <string name="brussheteDesc">Sample Desc</string>
+    <string name="btnRecipeShow">Show Recipe</string>
+    <string name="txtRecipeName">Bruschetta Recipe</string>
+    <string name="txtIncredients">Ingredients</string>
+    <string name="txtInc1">4 plum tomatoes</string>
+    <string name="txtInc2">6 basil leaves</string>
+    <string name="txtInc3">3 garlic cloves, chopped</string>
+    <string name="txtInc4">3 TB olive oil</string>
+    <string name="txtDirectionTitle">Directions</string>
+    <string name="txtDirection">Combine the ingredients and add salt to taste.\n
+        Top French bread slices with mixture.</string>
+</resources>

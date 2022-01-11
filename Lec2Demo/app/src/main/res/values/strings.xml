@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lec2Demo</string>
+    <string name="txtTitle">Concert Booking</string>
+    <string name="txtNumTickets">Number Of TIckets</string>
+    <string name="txtSipinnerPrompt">Concert Type</string>
+    <string name="txtConcertImage">Concert</string>
+    <string name="txtContentButton">Buton</string>
+    <string name="btnText">Click For Calculation</string>
+    <string-array name="concertType">
+        <item>Rock Band</item>
+        <item>Jazz Band</item>
+        <item>Blues Band</item>
+    </string-array>
+</resources>
