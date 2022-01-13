@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="ferryDescription">Image Of Ferry</string>
+    <string name="buttonMain">Click for Next Page</string>
+    <string name="txtHeadingPage2">Welcome to Page 2</string>
+    <string name="buttonPage2">Click To go Bck</string>
+    <string name="txtHint">Hint</string>
+    <string name="spinnerPrompt">prompt</string>
+    <string-array name="spinnerText">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+    </string-array>
+</resources>

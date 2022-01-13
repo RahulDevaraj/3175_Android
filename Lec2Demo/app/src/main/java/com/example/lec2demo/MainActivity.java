@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Spinner spinnerConcertType;
-    EditText editTextNumTix;
+    EditText editTextNumTxt;
     Button btnCalcCost;
 
     final String TAG = "Concert Dem";
@@ -27,12 +27,12 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"Stared Concert Booking");
 
         btnCalcCost = findViewById(R.id.btnCalcCost);
-        editTextNumTix = findViewById(R.id.editTextNumTxt);
+        editTextNumTxt = findViewById(R.id.editTextNumTxt);
 
         spinnerConcertType = findViewById(R.id.spinnerConcertType);
 
         btnCalcCost.setOnClickListener((View view) -> {
-    if(editTextNumTix.getText().toString().isEmpty()){
+    if(editTextNumTxt.getText().toString().isEmpty()){
         Log.d(TAG,"Inside Btn Empty Function");
         Toast.makeText(this, "Number of tickets Required", Toast.LENGTH_SHORT).show();
     }
