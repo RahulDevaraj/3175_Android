@@ -10,7 +10,7 @@ import android.widget.Button;
 public class Page2 extends AppCompatActivity {
 
     Button buttonBack;
-
+//Comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
