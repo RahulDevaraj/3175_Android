@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextInputWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/txtInputWeightHint"
+        android:hintTextColor="#757575"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        android:importantForAutofill="no" />
+
+    <RadioGroup
+        android:id="@+id/radGropConvType"
+        android:layout_width="250dp"
+        android:layout_height="0200dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextInputWeight">
+
+        <RadioButton
+            android:id="@+id/radBtnLbsToKgs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radBtnLbsToKgs" />
+
+        <RadioButton
+            android:id="@+id/radBtnKgsToLbs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radBtnKgsToLbs" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvertWt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/txtConvertWt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radGropConvType" />
+
+    <TextView
+        android:id="@+id/textViewResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConvertWt" />
+</androidx.constraintlayout.widget.ConstraintLayout>
