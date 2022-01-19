@@ -2,6 +2,7 @@ package com.example.lec2demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -38,6 +39,39 @@ public class MainActivity extends AppCompatActivity {
     }
     else{
         try {
+            int numTix = Integer.parseInt(editTextNumTxt.getText().toString());
+            int index = spinnerConcertType.getSelectedItemPosition();
+            double cost = 0;
+
+            switch (index){
+                case 0:
+                    cost = numTix*79.99;
+                    break;
+                case 1:
+                    cost = numTix*69.99;
+                    break;
+                case 2:
+                    cost = numTix*59.99;
+                    break;
+            }
+
+            //Send Results using Intent
+            Intent myResults = new Intent(this,ResultsActivity.class);
+
+            //Use a Bundle within Intent
+
+            Bundle bundle = new Bundle();
+            bundle.putInt("NUMTIX",numTix);
+            bundle.putString("TYPE",spinnerConcertType.getSelectedItem().toString());
+            bundle.putDouble("COST",cost);
+
+            //Adding Bundle to Intent
+            myResults.putExtras(bundle);
+
+            //Adding Bundle to StartActivity
+            startActivity(myResults);
+
+
 
         }
         catch (Exception e)
