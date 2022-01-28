@@ -13,14 +13,12 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/txtInputWeightHint"
-        android:hintTextColor="#757575"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="TextContrastCheck" />
 
     <RadioGroup
         android:id="@+id/radGropConvType"

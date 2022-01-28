@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -31,6 +32,24 @@ public class MainActivity extends AppCompatActivity {
         editTextNumTxt = findViewById(R.id.editTextNumTxt);
 
         spinnerConcertType = findViewById(R.id.spinnerConcertType);
+
+        spinnerConcertType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                //Corresponding index on spinner
+                if(i==0)
+                    Toast.makeText(MainActivity.this, "Rock Band", Toast.LENGTH_SHORT).show();
+                else if(i==1)
+                    Toast.makeText(MainActivity.this, "Jazz Band", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(MainActivity.this, "Blues Band", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         btnCalcCost.setOnClickListener((View view) -> {
     if(editTextNumTxt.getText().toString().isEmpty()){
