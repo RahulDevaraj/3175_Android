@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Lec4Demo</string>
     <string name="txtTitle">Chicago City Guide</string>
+    <string name="textNavyPier">Navy Pier</string>
+    <string name="artInstituteContent">Art Ins</string>
 </resources>
