@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         //custom adaptor
         SitesAdapter sitesAdapter2 = new SitesAdapter(ChicagoSiteNames,ChicagoSitePics);
         listViewSites.setAdapter(sitesAdapter2);
+        //Custom Adaport 2
+        List<SiteAttraction> siteAttractions = setList(ChicagoSiteNames,ChicagoSitePics);
+        SiteAdatper2 siteAdapter22 = new SiteAdatper2(siteAttractions);
+        listViewSites.setAdapter(siteAdapter22);
 
         listViewSites.setOnItemClickListener((AdapterView<?> adapterView, View view, int i, long l) ->{
 
@@ -60,4 +64,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //class method to take list of string and int from activity and compose another list
+    public static List<SiteAttraction> setList(List<String> ChicagoSiteNames,List<Integer> ChicagoSitePics){
+        List<SiteAttraction> siteAttractions = new ArrayList<>();
+        for(int i=0;i<ChicagoSiteNames.size();i++){
+            SiteAttraction siteAttraction = new SiteAttraction(ChicagoSiteNames.get(i),ChicagoSitePics.get(i));
+            siteAttractions.add(siteAttraction);
+        }
+        return  siteAttractions;
+    }
+
 }
