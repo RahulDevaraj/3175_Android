@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lecture6Aud</string>
+    <string name="imageSplash">Bag Pipes</string>
+    <string name="textTiltle">Music Player</string>
+</resources>
