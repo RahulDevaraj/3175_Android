@@ -41,35 +41,31 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         myAudioAdapter.setCurrentPlayIndex(i);
-                        mPlayer = MediaPlayer.create(MainActivity.this,songRaw.get(i));
-                        mPlayer.start();
-
-                        mPlayer.setOnCompletionListener((MediaPlayer mediaPlayer)-> {
-                            Log.d("inPlay","inside looping");
-                            try{
-                                //mPlayer.prepare();
-
-                                myAudioAdapter.setCurrentPlayIndex((myAudioAdapter.getCurrentPlayIndex()+1)%songRaw.size());
-                                mPlayer = mediaPlayer.create(MainActivity.this,songRaw.get((myAudioAdapter.getCurrentPlayIndex())));
-                                Log.d("inPlay",""+myAudioAdapter.getCurrentPlayIndex());
-                                mPlayer.start();
-
-
-                            }catch(Exception e){
-                                e.printStackTrace();
-                            }
-
-                        });
-
-
+                        playMusic(myAudioAdapter,myAudioAdapter.getCurrentPlayIndex());
+                        Log.d("inPlay","Song Play");
                     }
-
-
-
                 });
 
 
+    }
+    public void playMusic(AudioAdapter myAudioAdapter,int i){
+        mPlayer = MediaPlayer.create(MainActivity.this,songRaw.get(i));
+        mPlayer.start();
+        mPlayer.setOnCompletionListener((MediaPlayer mediaPlayer)-> {
+            Log.d("inPlay","inside looping");
+            try{
+                //mPlayer.prepare();
+                myAudioAdapter.setCurrentPlayIndex((myAudioAdapter.getCurrentPlayIndex()+1)%songRaw.size());
+                Log.d("inPlay",""+myAudioAdapter.getCurrentPlayIndex());
+                playMusic(myAudioAdapter,myAudioAdapter.getCurrentPlayIndex());
 
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+        });
 
     }
+
 }
+
