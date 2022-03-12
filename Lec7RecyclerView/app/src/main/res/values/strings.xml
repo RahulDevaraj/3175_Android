@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lec7RecyclerView</string>
+    <string name="txtTitle">Picture Gallery</string>
+    <string name="imageDesc">Image</string>
+    <string name="splashScreenImage">ImageSplash</string>
+    <string name="imageLarge2">Image Desc</string>
+</resources>

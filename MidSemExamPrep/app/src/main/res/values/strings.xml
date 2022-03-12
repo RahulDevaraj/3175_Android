@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MidSemExamPrep</string>
+    <string name="txtTitle">Main Page</string>
+    <string name="buttonSpinner">Go to Spinner</string>
+    <string name="SplashTitle">Welcome</string>
+    <string name="splashContentDesc">Splash Image</string>
+    <string name="txtViewSpinnerHeading">Spinner Page</string>
+    <string name="spinnerPrompt">Select Type</string>
+    <string name="editTextHint">Quantity</string>
+    <string name="buttonInSpinner">Calculate</string>
+    <string name="buttonForRadio">Go to Radio</string>
+    <string name="button1">Button Test 1</string>
+    <string name="radio2">Radio Button 2</string>
+    <string name="buttonArrayAdapter">Go to Array Adapter</string>
+    <string name="customAdapterButton">GO TO VUSTOM ADAPTER 1</string>
+    <string name="txtTitleCustomDriver1">Custom Driver 1</string>
+    <string name="buttonMusic">Button to Music Player</string>
+    <string name="musicTitle">MusicPlayer</string>
+    <string name="buttonGrid">GO to grid</string>
+    <string name="gridTitle">Grid</string>
+    <string-array name="spinnerArray">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+    </string-array>
+</resources>
