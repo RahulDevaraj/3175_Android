@@ -3,14 +3,18 @@ package com.example.lec8dbdemo.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.lec8dbdemo.R;
 import com.example.lec8dbdemo.databases.StudentsDatabase;
 import com.example.lec8dbdemo.databinding.ActivityMainBinding;
 import com.example.lec8dbdemo.interfaces.StudentDao;
+import com.example.lec8dbdemo.model.Grade;
 import com.example.lec8dbdemo.model.Student;
 import com.example.lec8dbdemo.adapters.StudentAdapter;
 
@@ -38,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         List<Student> allStudents = readStudentsCSV();
+        List<Grade> gradeList = readGrades();
+
+        Button button = binding.buttonNext;
+        button.setOnClickListener((View v)-> {
+            startActivity(new Intent(this,NextActivity.class));
+
+        });
+
         //ListView listViewStudents = findViewById(R.id.listViewStudents);
         ListView listViewStudents = binding.listViewStudents;
 
@@ -49,14 +61,20 @@ public class MainActivity extends AppCompatActivity {
         executorService.execute(()->{
             try {
                 studentDao.insertStudentsFromList(allStudents);
+                database.gradeDao().insertGrades(readGrades());
                 List<Student> allDbStudents = studentDao.getAllStudents();
+
+                runOnUiThread(()->{
+                    StudentAdapter studentAdapter = new StudentAdapter(allDbStudents);
+                    listViewStudents.setAdapter(studentAdapter);}
+                    );
             }catch (Exception e){
                 e.printStackTrace();
             }
         });
 
-        StudentAdapter studentAdapter = new StudentAdapter(allStudents);
-        listViewStudents.setAdapter(studentAdapter);
+
+
     }
 
     private List<Student> readStudentsCSV(){
@@ -91,6 +109,40 @@ public class MainActivity extends AppCompatActivity {
 
 
         return studentsList;
+    }
+
+    private List<Grade> readGrades(){
+        List<Grade> gradeList = new ArrayList<>();
+
+        InputStream inputStream = getResources().openRawResource(R.raw.grades);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        try {
+            String gradeLine;
+            if ((gradeLine = bufferedReader.readLine())!=null){
+                //Disposing the headings
+            }
+            while ((gradeLine = bufferedReader.readLine())!=null){
+                String[] eachLine = gradeLine.split(",");
+                Grade grade = new Grade(eachLine[0],eachLine[1],Double.parseDouble(eachLine[2]));
+                gradeList.add(grade);
+            }
+
+        }
+        catch (IOException e)
+        {
+            throw  new RuntimeException("Error in file read "+e);
+        }
+        finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return gradeList;
     }
 
 }

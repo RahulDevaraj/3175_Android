@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendMail() throws MessagingException {
 
-        String senderAddress = "insights041@gmail.com";
+        String senderAddress = "kannan.vegeta@gmail.com";
         String subject = "Test Subject";
         String message = "Test message";
 

@@ -16,7 +16,7 @@ import javax.mail.internet.MimeMessage;
 
 public class MailHelper extends AsyncTask<Void, Void, Void> {
 
-    public static final String PASSWORD= "test1234!s";
+    public static final String PASSWORD= "test1234!";
     public static final String EMAIL= "insights041@gmail.com";
     private Context context;
 

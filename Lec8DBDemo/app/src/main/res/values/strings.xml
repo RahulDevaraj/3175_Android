@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lec8DBDemo</string>
+    <string name="buttonNext">Click to Next Page</string>
 </resources>
