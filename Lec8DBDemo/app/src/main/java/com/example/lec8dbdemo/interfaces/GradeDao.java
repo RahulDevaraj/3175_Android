@@ -30,5 +30,8 @@ public interface GradeDao {
     @Query("UPDATE GRADES SET studentgrade = 1.1*studentgrade WHERE studentid = :stdId")
     int increaseGradeForOneStudent(String stdId);
 
+    @Query("UPDATE GRADES SET studentgrade = 1.1*studentgrade WHERE studentid IN (:stdId) AND courseid = :courseId")
+    int increaseGradesForStudentsInCourse(List<String> stdId,String courseId);
+
 
 }
