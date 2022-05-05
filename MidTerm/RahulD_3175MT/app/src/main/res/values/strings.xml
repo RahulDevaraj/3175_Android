@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RahulD_3175MT</string>
+    <string name="editTextHint">Parent Name</string>
+    <string name="textViewMyID">Rahul D - 300342528</string>
+    <string name="imageChosenCampDesc">Chosen Camp Image</string>
+    <string name="numberOfKidsHint">Number of Kids</string>
+    <string name="radBtnFood">Yes, I want food at the camp</string>
+    <string name="radBtnNoFood">No, I do not want food at the camp</string>
+    <string name="btnTextBookCamp">Book Camp</string>
+    <string-array name="camps">
+        <item>Soccer Goals</item>
+        <item>Theater Acts</item>
+        <item>Karate Kicks</item>
+    </string-array>
+</resources>
